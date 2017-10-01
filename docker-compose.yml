@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  owncloud:
+    image: owncloud/server:10.0.2
+    ports:
+      - 443:443
+      - 80:80
+    links:
+      - db
+      - redis
+    env_file:
+      - .env-owncloud-owncloud
+    volumes:
+      - ./volumes/owncloud:/mnt/data:z
+
+  db:
+    image: mariadb:10.1
+    env_file:
+      - .env-owncloud-mariadb
+    volumes:
+      - ./volumes/mysql:/var/lib/mysql:z
+
+  redis:
+    image: redis
