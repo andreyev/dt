@@ -21,9 +21,13 @@ $ git checkout ${branch}
 $ echo -e "\n" | ssh-keygen -N "" -f ~/.ssh/tf-puppet_${project_name}
 ```
 * Install Terraform binary from https://www.terraform.io/downloads.html
+* Choose your provider (`aws` or `azure`):
+```
+$ export provider=<YOUR PROVIDER>
+```
 * Initialiaze terraform
 ```
-$ terraform init
+$ terraform init ${provider}
 ```
 * To use AWS create a credential on console (https://console.aws.amazon.com/iam/home) and add it to your ~/.aws/credentials
 ```
@@ -34,9 +38,6 @@ aws_secret_access_key=<YOUR SECRET KEY>
 EOF
 ```
 * To use Azure run `az login` and follow the instructions.
-* Choose your provider (`aws` or `azure`):
-```
-$ export provider=<YOUR PROVIDER>
 ```
 * Deploy your project
 ```
