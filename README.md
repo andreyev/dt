@@ -45,7 +45,7 @@ EOF
 * To use Azure run `az login` and follow the instructions (you must have Azure CLI previously installed).
 * Deploy your project:
 ```
-$ terraform apply -var "public_key_path=~/.ssh/tf-puppet_${project_name}.pub" -var "private_key_path=~/.ssh/tf-puppet_${project_name}"  -var "project_name=${project_name}" -var "repository=${repository}" -var "branch=${branch}" -var "owncloud_admin_pass=${owncloud_admin_pass}" ${provider}
+$ terraform apply -var "public_key_path=~/.ssh/tf-puppet_${project_name}.pub" -var "private_key_path=~/.ssh/tf-puppet_${project_name}"  -var "project_name=${project_name}" -var "repository=${repository}" -var "branch=${branch}" -var "owncloud_admin_pass=${owncloud_admin_pass}" -var "user=${USER}" ${provider}
 ```
 * It's ready! Get your credentials and URL with:
 ```
@@ -53,5 +53,5 @@ $ terraform output ready
 ```
 * When done, destroy everything:
 ```
-$ terraform destroy -force -var "public_key_path=~/.ssh/tf-puppet_${project_name}.pub" -var "private_key_path=~/.ssh/tf-puppet_${project_name}"  -var "project_name=${project_name}" -var "repository=${repository}" -var "branch=${branch}" -var "owncloud_admin_pass=${owncloud_admin_pass}" ${provider}
+$ terraform destroy -force -var "public_key_path=~/.ssh/tf-puppet_${project_name}.pub" -var "private_key_path=~/.ssh/tf-puppet_${project_name}"  -var "project_name=${project_name}" -var "repository=${repository}" -var "branch=${branch}" -var "owncloud_admin_pass=${owncloud_admin_pass}" -var "user=${USER}" ${provider}
 ```

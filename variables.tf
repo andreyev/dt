@@ -21,3 +21,7 @@ variable "public_key_path" {
 variable "private_key_path" {
   description = "Path to private key"
 }
+
+variable "user" {
+  description = "Current user"
+}

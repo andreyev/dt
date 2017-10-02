@@ -1,6 +1,6 @@
 provider "aws" {
   region                  = "us-east-1"
-  shared_credentials_file = "/home/${env.USER}/.aws/credentials-${var.project_name}"
+  shared_credentials_file = "/home/${var.user}/.aws/credentials-${var.project_name}"
 }
 
 resource "aws_key_pair" "auth" {
