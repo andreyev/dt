@@ -8,7 +8,7 @@ $ export owncloud_admin_pass=<A STRONG PASSWORD>
 ```
 * Set your repository URL and branch:
 ```
-$ export repository='https://github.com/andreyev/tf-puppet.git'
+$ export repository='https://github.com/andreyev/dt.git'
 $ export branch=master
 ```
 * Clone this repository:
