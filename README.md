@@ -35,6 +35,7 @@ $ terraform init
 ```
 * To use AWS create a credential on console (https://console.aws.amazon.com/iam/home) and add it to your ~/.aws/credentials:
 ```
+$ mkdir ~/.aws
 $ cat << EOF > ~/.aws/credentials-${project_name}
 [default]
 aws_access_key_id=<YOUR ACCESS KEY>
