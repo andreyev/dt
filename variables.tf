@@ -22,6 +22,6 @@ variable "private_key_path" {
   description = "Path to private key"
 }
 
-variable "user" {
-  description = "Current user"
+variable "home" {
+  description = "Current user homedir"
 }
