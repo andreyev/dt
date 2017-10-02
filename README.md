@@ -15,6 +15,8 @@ $ export branch=master
 ```
 * Clone this repository:
 ```
+$ mkdir ${project_name}
+$ cd $_
 $ git clone ${repository} .
 $ git checkout ${branch}
 ```
