@@ -1,22 +1,22 @@
-* Define your project name and set it as a variable
+* Define your project name and set it as a variable:
 ```
 $ export project_name=<YOUR PROJECT NAME>
 ```
-* Define your owncloud admin's password
+* Define your owncloud admin's password:
 ```
 $ export owncloud_admin_pass=<A STRONG PASSWORD>
 ```
-* Set your repository URL and branch
+* Set your repository URL and branch:
 ```
 $ export repository='https://github.com/andreyev/tf-puppet.git'
 $ export branch=master
 ```
-* Clone this repository
+* Clone this repository:
 ```
 $ git clone ${repository} .
 $ git checkout ${branch}
 ```
-* Create a SSH key pair to this project (without a passphase for your convenience)
+* Create a SSH key pair to this project (without a passphase for your convenience):
 ```
 $ echo -e "\n" | ssh-keygen -N "" -f ~/.ssh/tf-puppet_${project_name}
 ```
@@ -25,11 +25,11 @@ $ echo -e "\n" | ssh-keygen -N "" -f ~/.ssh/tf-puppet_${project_name}
 ```
 $ export provider=<YOUR PROVIDER>
 ```
-* Initialiaze terraform
+* Initialiaze terraform to install provider modules:
 ```
-$ terraform init ${provider}
+$ terraform init
 ```
-* To use AWS create a credential on console (https://console.aws.amazon.com/iam/home) and add it to your ~/.aws/credentials
+* To use AWS create a credential on console (https://console.aws.amazon.com/iam/home) and add it to your ~/.aws/credentials:
 ```
 $ cat << EOF > ~/.aws/credentials-${project_name}
 [default]
@@ -39,11 +39,11 @@ EOF
 ```
 * To use Azure run `az login` and follow the instructions.
 ```
-* Deploy your project
+* Deploy your project:
 ```
 $ terraform apply -var "public_key_path=~/.ssh/tf-puppet_${project_name}.pub" -var "private_key_path=~/.ssh/tf-puppet_${project_name}"  -var "project_name=${project_name}" -var "repository=${repository}" -var "branch=${branch}" -var "owncloud_admin_pass=${owncloud_admin_pass}" ${provider}
 ```
-* It's done! Get your credentials and URL with:
+* It's ready! Get your credentials and URL with:
 ```
 $ terraform output ready
 ```
