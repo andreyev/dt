@@ -37,7 +37,7 @@ aws_access_key_id=<YOUR ACCESS KEY>
 aws_secret_access_key=<YOUR SECRET KEY>
 EOF
 ```
-* To use Azure run `az login` and follow the instructions.
+* To use Azure run `az login` and follow the instructions (you must have Azure CLI previously installed).
 ```
 * Deploy your project:
 ```
