@@ -1,3 +1,5 @@
+At a glance, create a simple VM on AWS or Azure and use Puppet to deploy some Docker containers to provide OwnCloud server.
+
 * Define your project name and set it as a variable:
 ```
 $ export project_name=<YOUR PROJECT NAME>
